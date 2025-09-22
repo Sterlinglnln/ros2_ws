@@ -1,0 +1,66 @@
+# 构建和安装目录
+build/
+install/
+log/
+build_isolated/
+install_isolated/
+
+# ROS 2 自动生成的文件
+**/msg_gen/
+**/srv_gen/
+**/action_gen/
+**/CMakeFiles/
+**/catkin_generated/
+**/ament_cmake_core/
+**/ament_cmake_target_dependencies/
+
+# 编译生成的文件
+*.o
+*.so
+*.a
+*.la
+*.lo
+*.mod
+*.slo
+*.Plo
+*.Po
+*.gch
+*.pch
+*.dylib
+*.dll
+*.exe
+*.pyc
+__pycache__/
+
+# IDE 配置文件
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+.project
+.cproject
+.pydevproject
+.settings/
+
+# 测试相关文件
+pytest.xml
+.coverage
+coverage.xml
+htmlcov/
+
+# 自定义配置和日志
+*.log
+*.bag
+*.bag.active
+*.sqlite3
+*.db
+*.cfg
+*.perspective
+*.user
+
+# 依赖相关
+vendor/
+third_party/
+external/

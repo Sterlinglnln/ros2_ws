@@ -13,6 +13,7 @@ install_isolated/
 **/catkin_generated/
 **/ament_cmake_core/
 **/ament_cmake_target_dependencies/
+*.mcap
 
 # 编译生成的文件
 *.o

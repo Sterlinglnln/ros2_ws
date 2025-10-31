@@ -1,0 +1,15 @@
+hardware:
+  plugin: "mg6010_can_control/MG6010System"
+  parameters:
+    can_interface: "can0"
+    bitrate: 1000000
+
+joints:
+  - name: left_wheel_joint
+    command_interfaces: [velocity]
+    state_interfaces: [position, velocity, effort]
+    parameters: {id: "1"}
+  - name: right_wheel_joint
+    command_interfaces: [velocity]
+    state_interfaces: [position, velocity, effort]
+    parameters: {id: "2"}

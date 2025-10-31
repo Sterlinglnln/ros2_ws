@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>mg6010_can_control</name>
+  <version>0.0.0</version>
+  <description>ROS2 Control hardware interface for MG6010-i6 V3 over SocketCAN</description>
+
+  <maintainer email="fpnf97@outlook.com">larry</maintainer>
+  <license>Apache-2.0</license>
+
+  <depend>rclcpp</depend>
+  <depend>hardware_interface</depend>
+  <depend>pluginlib</depend>
+  <depend>rclcpp_lifecycle</depend>
+  <depend>rcutils</depend>
+
+  <export>
+    <hardware_interface plugin="${prefix}/plugin_description.xml"/>
+  </export>
+</package>

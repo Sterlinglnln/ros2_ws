@@ -1,0 +1,8 @@
+<library path="libmg6010_can_control.so">
+  <class
+    name="mg6010_can_control/MG6010System"
+    type="mg6010_can_control::MG6010System"
+    base_class_type="hardware_interface::SystemInterface">
+    <description>MG6010-i6 V3 CAN socket hardware</description>
+  </class>
+</library>

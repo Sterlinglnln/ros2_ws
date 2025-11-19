@@ -1,0 +1,5 @@
+#client request is a string repersent JSON
+string reqjsonstr
+---
+#server response is a string repersent JSON
+string resjsonstr

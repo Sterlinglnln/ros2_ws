@@ -28,6 +28,11 @@ setup(
         'console_scripts': [
             'draw_spiral = turtle_exercise.draw_spiral:main',
             'spawn = turtle_exercise.spawn:main',
+            'action_move = turtle_exercise.action_move:main',
+            'random_walk = turtle_exercise.random_walk:main',
+            'clear_turtle = turtle_exercise.clear_turtle:main',
+            'spawn_cmd = turtle_exercise.spawn_cmd:main',
+            'set_pen = turtle_exercise.set_pen:main',
         ],
     },
 )

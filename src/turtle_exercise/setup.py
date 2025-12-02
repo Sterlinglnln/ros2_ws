@@ -33,6 +33,9 @@ setup(
             'clear_turtle = turtle_exercise.clear_turtle:main',
             'spawn_cmd = turtle_exercise.spawn_cmd:main',
             'set_pen = turtle_exercise.set_pen:main',
+            'tf_broadcast = turtle_exercise.tf_broadcast:main',
+            'move_to_point = turtle_exercise.move_to_point:main',
+            'tf_following = turtle_exercise.tf_following:main',
         ],
     },
 )

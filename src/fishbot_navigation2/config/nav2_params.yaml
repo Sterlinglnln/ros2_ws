@@ -40,6 +40,7 @@ amcl:
 
 bt_navigator:
   ros__parameters:
+    enabled: false
     global_frame: map
     robot_base_frame: base_link
     odom_topic: /odom
@@ -67,6 +68,7 @@ bt_navigator:
 
 controller_server:
   ros__parameters:
+    enabled: false
     controller_frequency: 20.0
     costmap_update_timeout: 0.30
     min_x_velocity_threshold: 0.001
@@ -197,11 +199,9 @@ local_costmap:
       height: 3
       resolution: 0.05
       robot_radius: 0.12
+
       plugins: ["voxel_layer", "inflation_layer"]
-      inflation_layer:
-        plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
-        inflation_radius: 0.24
+
       voxel_layer:
         plugin: "nav2_costmap_2d::VoxelLayer"
         enabled: True
@@ -214,18 +214,17 @@ local_costmap:
         observation_sources: scan
         scan:
           topic: /scan
-          max_obstacle_height: 2.0
+          sensor_frame: laser_link
+          data_type: LaserScan
           clearing: True
           marking: True
-          data_type: "LaserScan"
-          raytrace_max_range: 3.0
-          raytrace_min_range: 0.0
           obstacle_max_range: 2.5
           obstacle_min_range: 0.0
-      static_layer:
-        plugin: "nav2_costmap_2d::StaticLayer"
-        map_subscribe_transient_local: True
-      always_send_full_costmap: True
+
+      inflation_layer:
+        plugin: "nav2_costmap_2d::InflationLayer"
+        inflation_radius: 0.24
+        cost_scaling_factor: 3.0
 
 global_costmap:
   global_costmap:
@@ -236,29 +235,32 @@ global_costmap:
       robot_base_frame: base_link
       robot_radius: 0.12
       resolution: 0.05
-      track_unknown_space: true
+      track_unknown_space: false
+
       plugins: ["static_layer", "obstacle_layer", "inflation_layer"]
+      
+      static_layer:
+        plugin: "nav2_costmap_2d::StaticLayer"
+        map_subscribe_transient_local: True
+
       obstacle_layer:
         plugin: "nav2_costmap_2d::ObstacleLayer"
         enabled: True
         observation_sources: scan
         scan:
           topic: /scan
-          max_obstacle_height: 2.0
-          clearing: True
+          sensor_frame: laser_link
+          data_type: LaserScan
           marking: True
-          data_type: "LaserScan"
-          raytrace_max_range: 3.0
-          raytrace_min_range: 0.0
+          clearing: True
           obstacle_max_range: 2.5
           obstacle_min_range: 0.0
-      static_layer:
-        plugin: "nav2_costmap_2d::StaticLayer"
-        map_subscribe_transient_local: True
+
       inflation_layer:
         plugin: "nav2_costmap_2d::InflationLayer"
-        cost_scaling_factor: 3.0
         inflation_radius: 0.24
+        cost_scaling_factor: 3.0
+
       always_send_full_costmap: True
 
 # The yaml_filename does not need to be specified since it going to be set by defaults in launch.
@@ -277,6 +279,7 @@ map_saver:
 
 planner_server:
   ros__parameters:
+    enabled: false
     expected_planner_frequency: 20.0
     planner_plugins: ["GridBased"]
     costmap_update_timeout: 1.0
@@ -456,10 +459,12 @@ docking_server:
 
 loopback_simulator:
   ros__parameters:
+    enabled: true
+    use_sim_time: true
     base_frame_id: "base_footprint"
     odom_frame_id: "odom"
     map_frame_id: "map"
-    scan_frame_id: "base_scan"  # tb4_loopback_simulator.launch.py remaps to 'rplidar_link'
+    scan_frame_id: "laser_link"  # tb4_loopback_simulator.launch.py remaps to 'rplidar_link'
     update_duration: 0.02
     scan_range_min: 0.05
     scan_range_max: 30.0

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="single_robot_arm">
+  <link
+    name="dz_link">
+    <inertial>
+      <origin
+        xyz="-1.31365444379729E-10 -4.15748033937388E-10 0.0397768073049284"
+        rpy="0 0 0" />
+      <mass
+        value="0.835551002421824" />
+      <inertia
+        ixx="0.001285043562431"
+        ixy="4.80150358498104E-12"
+        ixz="3.89629037129415E-12"
+        iyy="0.00128504357988057"
+        iyz="2.82181799021155E-11"
+        izz="0.00134667669307557" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/dz_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/dz_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="jb_Link">
+    <inertial>
+      <origin
+        xyz="-0.0038504 0.059295 -2.6962E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.2238" />
+      <inertia
+        ixx="0.0023351"
+        ixy="-2.0236E-05"
+        ixz="9.8975E-11"
+        iyy="0.0020274"
+        iyz="-4.1432E-09"
+        izz="0.0024751" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/jb_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/jb_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="jb_Joint"
+    type="fixed">
+    <origin
+      xyz="0 -0.09 0"
+      rpy="-3.1416 0.67061 0" />
+    <parent
+      link="dz_link" />
+    <child
+      link="jb_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="b1_Link">
+    <inertial>
+      <origin
+        xyz="0.13200000414299 -0.0132927605628324 -0.0568800499042117"
+        rpy="0 0 0" />
+      <mass
+        value="3.08015953797015" />
+      <inertia
+        ixx="0.00506887571584958"
+        ixy="-1.05715047303745E-08"
+        ixz="2.43146221044967E-09"
+        iyy="0.0459592805063873"
+        iyz="-0.000216072807368031"
+        izz="0.0450851648502817" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/b1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/b1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="b1_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.06 0.319 0"
+      rpy="-1.3412 0 -1.5708" />
+    <parent
+      link="jb_Link" />
+    <child
+      link="b1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="b2_Link">
+    <inertial>
+      <origin
+        xyz="0.0744408041420845 -0.0423378330923048 4.65567044118098E-08"
+        rpy="0 0 0" />
+      <mass
+        value="1.23568431273335" />
+      <inertia
+        ixx="0.00115971354568489"
+        ixy="0.000168413876624566"
+        ixz="-1.62266410306714E-09"
+        iyy="0.00191944842014932"
+        iyz="3.08002308987277E-10"
+        izz="0.00185350630448597" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/b2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/b2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="b2_Joint"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="-1.3412 0 3.1416" />
+    <parent
+      link="b1_Link" />
+    <child
+      link="b2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="c1_Link">
+    <inertial>
+      <origin
+        xyz="0.0034826 -0.010439 -0.044667"
+        rpy="0 0 0" />
+      <mass
+        value="0.59536" />
+      <inertia
+        ixx="0.0007891"
+        ixy="-4.1082E-07"
+        ixz="-1.7581E-06"
+        iyy="0.00081066"
+        iyz="-6.5071E-05"
+        izz="0.00054743" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/c1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/c1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="c1_Joint"
+    type="fixed">
+    <origin
+      xyz="0.237 -0.095 0"
+      rpy="-1.3412 0 -3.1416" />
+    <parent
+      link="b2_Link" />
+    <child
+      link="c1_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="c2_Link">
+    <inertial>
+      <origin
+        xyz="0.0034826540454793 0.0458708044910595 1.04905675890206E-08"
+        rpy="0 0 0" />
+      <mass
+        value="0.595356973503923" />
+      <inertia
+        ixx="0.000789102668904214"
+        ixy="1.80554567819363E-06"
+        ixz="-9.54072415297574E-11"
+        iyy="0.000532220170155014"
+        iyz="-6.98467373143675E-11"
+        izz="0.000825871370172609" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/c2_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/c2_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="c2_Joint"
+    type="fixed">
+    <origin
+      xyz="-0.045 0.012516 0.053557"
+      rpy="0 1.3412 -1.5708" />
+    <parent
+      link="c1_Link" />
+    <child
+      link="c2_Link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="s1_Link">
+    <inertial>
+      <origin
+        xyz="0.0034826 0.045871 -4.9542E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.59536" />
+      <inertia
+        ixx="0.0007891"
+        ixy="1.8055E-06"
+        ixz="5.3402E-11"
+        iyy="0.00053222"
+        iyz="-2.5767E-11"
+        izz="0.00082587" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/s1_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://single_robot_arm/meshes/s1_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="s1_Joint"
+    type="fixed">
+    <origin
+      xyz="0.045 -0.055 0"
+      rpy="0 0 1.5708" />
+    <parent
+      link="c2_Link" />
+    <child
+      link="s1_Link" />
+    <axis
+      xyz="0 0 0" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

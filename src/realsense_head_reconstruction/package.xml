@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>realsense_head_reconstruction</name>
+  <version>0.0.1</version>
+  <description>Capture Intel RealSense D435i head point clouds and run a simple PCL-based 3D reconstruction.</description>
+  <maintainer email="sterling@example.com">sterling</maintainer>
+  <license>Apache License 2.0</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>pcl_conversions</depend>
+  <depend>pcl_msgs</depend>
+  <depend>std_srvs</depend>
+
+  <exec_depend>pcl_ros</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

@@ -1,0 +1,650 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="double_arm_robot">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-1.125 0.807484805961355 0.566243957566061"
+        rpy="0 0 0" />
+      <mass
+        value="6.203760800518" />
+      <inertia
+        ixx="0.0551931956930665"
+        ixy="-9.21965982208382E-36"
+        ixz="2.30366305606409E-18"
+        iyy="0.0551931956930665"
+        iyz="0"
+        izz="0.0400950472946025" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="yao_Link">
+    <inertial>
+      <origin
+        xyz="2.77555756156289E-16 0 -0.233812061087759"
+        rpy="0 0 0" />
+      <mass
+        value="14.975889643634" />
+      <inertia
+        ixx="1.68932797249582"
+        ixy="0"
+        ixz="3.77992531563176E-17"
+        iyy="1.68475843799339"
+        iyz="-2.29291639558158E-17"
+        izz="0.0371712031763964" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/yao_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/yao_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="yao_joint"
+    type="continuous">
+    <origin
+      xyz="-1.125 0 0.80748"
+      rpy="-1.5708 1.2983 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="yao_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="r_Link">
+    <inertial>
+      <origin
+        xyz="1.11022302462516E-16 -1.66533453693773E-16 0.0669618145391296"
+        rpy="0 0 0" />
+      <mass
+        value="0.153305432748164" />
+      <inertia
+        ixx="0.000503274623701957"
+        ixy="-3.79470760369927E-19"
+        ixz="-5.78229015238496E-19"
+        iyy="0.000435379746264521"
+        iyz="5.89057192344332E-19"
+        izz="0.000241773436046529" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/r_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/r_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.25246 -0.65672"
+      rpy="-1.5708 -0.39051 0" />
+    <parent
+      link="yao_Link" />
+    <child
+      link="r_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rjb_Link">
+    <inertial>
+      <origin
+        xyz="-6.32678639478357E-08 -4.46311429369572E-07 0.0251799998032097"
+        rpy="0 0 0" />
+      <mass
+        value="0.243891100878861" />
+      <inertia
+        ixx="0.000862201995142612"
+        ixy="-3.75611319745377E-10"
+        ixz="3.45279526168662E-11"
+        iyy="0.000749440520195565"
+        iyz="1.72883617672952E-10"
+        izz="0.000579506045254298" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rjb_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rjb_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rjb_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.10754"
+      rpy="3.1416 -1.4917 -1.5708" />
+    <parent
+      link="r_Link" />
+    <child
+      link="rjb_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="rb_Link">
+    <inertial>
+      <origin
+        xyz="0.00276174805506835 -5.25717192223496E-07 0.182206640005679"
+        rpy="0 0 0" />
+      <mass
+        value="0.2480854466101" />
+      <inertia
+        ixx="0.00177958996518208"
+        ixy="-4.5370137477353E-09"
+        ixz="-1.69054299533855E-05"
+        iyy="0.00181009821534032"
+        iyz="-6.39250486732571E-10"
+        izz="0.000439918103900342" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rb_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rb_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rb_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.074026"
+      rpy="0 0 2.0331" />
+    <parent
+      link="rjb_Link" />
+    <child
+      link="rb_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="rw_Link">
+    <inertial>
+      <origin
+        xyz="2.84768980618466E-08 -6.19162654480476E-09 0.0253486113712054"
+        rpy="0 0 0" />
+      <mass
+        value="0.244923378836705" />
+      <inertia
+        ixx="0.000865180622488072"
+        ixy="-6.72942956723023E-10"
+        ixz="1.67325732642384E-10"
+        iyy="0.000751349065549279"
+        iyz="1.28699428304996E-10"
+        izz="0.000580753904014795" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.27797"
+      rpy="0 0.63873 0" />
+    <parent
+      link="rb_Link" />
+    <child
+      link="rw_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="rs_Link">
+    <inertial>
+      <origin
+        xyz="2.55351295663786E-15 -6.66133814775094E-16 0.135094994862889"
+        rpy="0 0 0" />
+      <mass
+        value="0.155545815452268" />
+      <inertia
+        ixx="0.00053649500591798"
+        ixy="1.35525271560688E-20"
+        ixz="-1.01982766849418E-18"
+        iyy="0.00048785930887372"
+        iyz="1.55176435936988E-18"
+        izz="0.000240768812265731" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rs_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/rs_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rs_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.067802"
+      rpy="0 0 -1.2377" />
+    <parent
+      link="rw_Link" />
+    <child
+      link="rs_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="l_Link">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-16 4.44089209850063E-16 0.0669618145391302"
+        rpy="0 0 0" />
+      <mass
+        value="0.153305432748165" />
+      <inertia
+        ixx="0.000503274623701959"
+        ixy="-5.28548559086683E-19"
+        ixz="1.68574825405926E-18"
+        iyy="0.000435379746264523"
+        iyz="-1.11246539454985E-18"
+        izz="0.000241773436046529" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/l_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/l_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.25246 -0.65672"
+      rpy="-1.5708 -0.52774 3.1416" />
+    <parent
+      link="yao_Link" />
+    <child
+      link="l_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="ljb_Link">
+    <inertial>
+      <origin
+        xyz="3.57822389496221E-08 8.45718606257151E-09 0.0251794676379651"
+        rpy="0 0 0" />
+      <mass
+        value="0.24388844658706" />
+      <inertia
+        ixx="0.000862202033890704"
+        ixy="-4.4275673375554E-10"
+        ixz="-3.87262929515096E-12"
+        iyy="0.00074944050688781"
+        iyz="9.90855050325657E-11"
+        izz="0.000579506039789357" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/ljb_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/ljb_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ljb_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.10754"
+      rpy="0 0.56769 -1.5708" />
+    <parent
+      link="l_Link" />
+    <child
+      link="ljb_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="lb_Link">
+    <inertial>
+      <origin
+        xyz="0.00276184664184054 -5.03633065918052E-07 0.0772804730071093"
+        rpy="0 0 0" />
+      <mass
+        value="0.248084871531775" />
+      <inertia
+        ixx="0.00177958843288729"
+        ixy="-3.66287735776086E-09"
+        ixz="-1.69047530917435E-05"
+        iyy="0.00181009557204282"
+        iyz="-2.42344449521113E-10"
+        izz="0.000439916657544921" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/lb_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/lb_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lb_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.17895"
+      rpy="0 0 -1.7458" />
+    <parent
+      link="ljb_Link" />
+    <child
+      link="lb_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="lw_Link">
+    <inertial>
+      <origin
+        xyz="2.76744671623419E-07 -4.41421789787455E-07 0.0253484833257516"
+        rpy="0 0 0" />
+      <mass
+        value="0.244920174808673" />
+      <inertia
+        ixx="0.00086518038593815"
+        ixy="-4.76547608435607E-10"
+        ixz="2.62299340762578E-10"
+        iyy="0.000751349132590086"
+        iyz="6.97497359349042E-11"
+        izz="0.000580753986916928" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/lw_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/lw_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lw_joint"
+    type="revolute">
+    <origin
+      xyz="0 0 0.17305"
+      rpy="0 1.3758 3.1416" />
+    <parent
+      link="lb_Link" />
+    <child
+      link="lw_Link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="3.14"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="ls_Link">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 4.9960036108132E-16 0.161573270254131"
+        rpy="0 0 0" />
+      <mass
+        value="0.155545815452271" />
+      <inertia
+        ixx="0.000536495005917985"
+        ixy="2.50721752387273E-19"
+        ixz="1.62630325872826E-19"
+        iyy="0.000487859308873725"
+        iyz="-9.6900569165892E-19"
+        izz="0.000240768812265735" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/ls_Link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://double_arm_robot/meshes/ls_Link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="ls_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.041324"
+      rpy="0 0 2.0334" />
+    <parent
+      link="lw_Link" />
+    <child
+      link="ls_Link" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+</robot>
